@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock-Paper-Scissors</title>
+  </head>
+  <body>
+    <script>
+      function computerPlay() {
+        let option = "";
+        let randomizer = Math.floor(Math.random() * 3) + 1;
+
+        if (randomizer === 1) {
+          option = "rock";
+        } else if (randomizer === 2) {
+          option = "paper";
+        } else {
+          option = "scissors";
+        }
+        return option;
+      }
+
+      const computerSelection = computerPlay();
+
+      let playerWins = 0;
+      let computerWins = 0;
+
+      function playRound(playerSelection, computerSelection) {
+        if (
+          playerSelection !== "rock" &&
+          playerSelection !== "paper" &&
+          playerSelection !== "scissors"
+        ) {
+          return `${playerSelection} is an invalid option, please try again`;
+        } else if (
+          (playerSelection == "rock" && computerSelection == "scissors") ||
+          (playerSelection == "scissors" && computerSelection == "paper") ||
+          (playerSelection == "paper" && computerSelection == "rock")
+        ) {
+          playerWins++;
+          return `You win! ${playerSelection} beats ${computerSelection}. The current score is: You: ${playerWins} - Computer: ${computerWins}`;
+        } else if (
+          (playerSelection === "rock" && computerSelection === "rock") ||
+          (playerSelection === "paper" && computerSelection === "paper") ||
+          (playerSelection === "scissors" && computerSelection === "scissors")
+        ) {
+          return `It's a tie! Player picked ${playerSelection} and computer picked ${computerSelection}. The current score is: You: ${playerWins} - Computer: ${computerWins}`;
+        } else {
+          computerWins++;
+          return `You lose! ${computerSelection} beats ${playerSelection}. The current score is: You: ${playerWins} - Computer: ${computerWins}`;
+        }
+      }
+
+      function game() {
+        let rounds = 1;
+
+        while (rounds <= 5) {
+          let playerSelection = prompt(
+            "Pick an option: Rock, Paper or Scissors?"
+          ).toLowerCase();
+          console.log(playRound(playerSelection, computerPlay()));
+          rounds++;
+        }
+        if (playerWins > computerWins) {
+          console.log(
+            `Congratulations, you won the game! Final score - You: ${playerWins} Computer: ${computerWins}`
+          );
+        } else if (playerWins < computerWins) {
+          console.log(
+            `You lost :[ Final score: You: ${playerWins} Computer: ${computerWins}`
+          );
+        } else {
+          console.log(
+            `It's a tie! Final score: You: ${playerWins} Computer: ${computerWins}`
+          );
+        }
+      }
+
+      game();
+    </script>
+  </body>
+</html>
