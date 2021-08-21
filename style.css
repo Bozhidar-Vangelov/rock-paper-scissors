@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Klee+One:wght@600&display=swap");
+
 html {
   box-sizing: border-box;
 }
@@ -11,6 +13,8 @@ body {
     rgba(0, 212, 255, 1) 100%
   );
   color: #14213d;
+  font-size: 36px;
+  font-family: "Klee One", cursive;
 }
 
 .heading {
@@ -61,4 +65,24 @@ body {
 
 .icon-image:hover {
   top: -5px;
+}
+
+.play-again-container {
+  display: flex;
+}
+
+.play-again {
+  margin: 50px auto;
+  border: none;
+  background-color: transparent;
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+  text-align: center;
+  padding: 10px;
+  font-size: 36px;
+  color: #14213d;
+  font-family: "Klee One", cursive;
+  cursor: pointer;
 }
