@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Klee+One:wght@600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Klee+One:wght@600&display=swap');
 
 html {
   box-sizing: border-box;
@@ -14,7 +14,7 @@ body {
   );
   color: #14213d;
   font-size: 36px;
-  font-family: "Klee One", cursive;
+  font-family: 'Klee One', cursive;
 }
 
 .heading {
@@ -83,6 +83,30 @@ body {
   padding: 10px;
   font-size: 36px;
   color: #14213d;
-  font-family: "Klee One", cursive;
+  font-family: 'Klee One', cursive;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 992px) {
+  .icon {
+    width: 150px;
+    height: 150px;
+  }
+
+  .icon-image img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .icon-image img {
+    width: 100px;
+    height: 100px;
+  }
 }
